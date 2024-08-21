@@ -3,24 +3,47 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../components/layout";
+import styled from "styled-components";
+
+
+const BlogPostWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the contents horizontally
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 20px;
+  text-align: center; /* Center text inside the container */
+`;
+
+const BlogPostTitle = styled.h1`
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+`;
+
+const BlogPostContent = styled.div`
+  line-height: 1.6;
+  font-size: 16px;
+  padding: 20px;
+`;
 
 const BlogPost = ({ data }) => {
   const post = data.markdownRemark;
 
   return (
     <Layout>
-      <div>
-        <h1>{post.frontmatter.title}</h1>
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-      </div>
+      <BlogPostWrapper>
+        <BlogPostTitle>{post.frontmatter.title}</BlogPostTitle>
+        <BlogPostContent dangerouslySetInnerHTML={{ __html: post.html }} />
+      </BlogPostWrapper>
     </Layout>
   );
 };
 
 export default BlogPost;
 
-// exports a constant named query, which contains a GraphQL query
-export const query = graphql`   
+export const query = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html

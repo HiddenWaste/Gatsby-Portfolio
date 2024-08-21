@@ -1,6 +1,7 @@
 ---
 title: "Study Abroad Scholarship Guide (Somewhat)"
 date: "2023-07-24"
+tags: ["Essay"]
 ---
 
 APPLY APPLY APPLY

@@ -2,22 +2,7 @@
 
 import React from "react";
 import Layout from "../components/layout"; // Corrected import path
-
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-};
-
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-};
-
-const paragraphStyles = {
-  marginBottom: 48,
-};
+import { pageStyles, headingStyles, paragraphStyles } from "../styles";
 
 const birdListStyles = {
   listStyleType: "none",
@@ -25,8 +10,8 @@ const birdListStyles = {
 };
 
 const birdItemStyles = {
-  fontSize: 24,
-  marginBottom: 30,
+  fontSize: 20,
+  marginBottom: 15,
 };
 
 const BirdPage = () => {

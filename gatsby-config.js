@@ -5,29 +5,15 @@
 const path = require('path'); // Used to get the path for markdown blog posts
 
 module.exports = {
+  // An export specifically for blog markdown files
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `blogs`,
-        path: `${__dirname}/src/blogs/`,
+        path: `${__dirname}/src/blogs/`,     // Path for blog markdowns
       },
     },
-    `gatsby-transformer-remark`,
+    `gatsby-transformer-remark`,            // Markdown Plugin Used
   ],
 };
-
-// module.exports = {
-//   siteMetadata: {
-//     title: `FirstGatsby`,
-//     siteUrl: `https://www.yourdomain.tld`
-//   },
-//   plugins: ["gatsby-transformer-remark", {
-//     resolve: 'gatsby-source-filesystem',
-//     options: {
-//       "name": "blogs",
-//       "path": path.join(`src`, `blogs`), // Use path.join to construct the path
-//     },
-//     __key: "blogs"
-//   }]
-// };

@@ -8,9 +8,9 @@ import { Link } from "gatsby";
 const toggleButtonStyles = {
   cursor: 'pointer',
   padding: '5px',               // Internal Padding of Button Text
-  backgroundColor: '#1180c7',
-  color: '#fff',
-  border: 'none',               // Color of Button Text
+  backgroundColor: '#414141',    // Background Button Color
+  color: '#fff',                 // Color of Button Text
+  border: 'none',              
   borderRadius: '5px',
   position: 'fixed',
   top: '10px',
@@ -48,7 +48,7 @@ const Sidebar = () => {
   return (
     <>
       <button onClick={toggleSidebar} style={toggleButtonStyles}>
-        {isOpen ? '|======|' : '=='}
+        {isOpen ? '|==|' : '=='}
       </button>
       <nav style={sidebarStyles(isOpen)}>
         {isOpen && (
@@ -56,6 +56,7 @@ const Sidebar = () => {
             <h2>Navigation</h2>
             <Link to="/" style={linkStyles}>Home</Link>
             <Link to="/second-page" style={linkStyles}>Second Page</Link>
+            <Link to="/github-fun" style={linkStyles}>Fun GitHub Stuff</Link>
             <Link to="/birds" style={linkStyles}>Birds of South Dakota</Link>
             <Link to="/about-me" style={linkStyles}>About Me</Link>
             <h2> Blog </h2>

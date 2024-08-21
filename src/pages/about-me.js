@@ -51,6 +51,21 @@ const AboutMePage = () => {
             </figcaption>
           </figure>
         </div>
+
+        {/* Occupation Listing */}
+        <div id="OccupationList">   
+          Current Job Occupations:
+          <ul>
+            <li>Sound Tech for Madison High School</li>
+            <li>
+              Bartender at{" "}
+              <a href="https://www.theofficemadison.com/" target="_blank" rel="noopener noreferrer">
+                Office Bar and Grill
+              </a>
+            </li>
+          </ul>
+        </div>
+
         <div>
           My various interests include:
           <ul id="InterestList" style={interestListStyles}>
@@ -63,18 +78,6 @@ const AboutMePage = () => {
             </li>
           </ul>
           <p> Most of these are showcased to some degree on my <Link to="/blog">Blog</Link>.   </p>
-        </div>
-        <div id="OccupationList">
-          Current Job Occupations:
-          <ul>
-            <li>Sound Tech for Madison High School</li>
-            <li>
-              Bartender at{" "}
-              <a href="https://www.theofficemadison.com/" target="_blank" rel="noopener noreferrer">
-                Office Bar and Grill
-              </a>
-            </li>
-          </ul>
         </div>
       </main>
     </Layout>
