@@ -13,6 +13,7 @@ const PlayChordButton = () => {
   const [isPlayingRandomChord, setIsPlayingRandomChord] = useState(false);  // Hook for playing a random chord
   const [isPlayingScale, setIsPlayingScale] = useState(false);              // Scale Time!
   const [isPlayingRandomScale, setIsPlayingRandomScale] = useState(false);  // Randomize Scale
+  const [textBoxValue, setTextBoxValue] = useState("");                    // Hook for textbox value
 
 
   const playChord = async () => {
@@ -21,6 +22,7 @@ const PlayChordButton = () => {
 
     const chord = ['C4', 'E4', 'G4'];
     synth.triggerAttackRelease(chord, '4n');
+    setTextBoxValue(chord);
 
     setIsPlayingChord(true);
 
@@ -43,7 +45,8 @@ const PlayChordButton = () => {
       notes[(randomNoteIndex + 7) % notes.length]   // Fifth note
     ];
 
-    synth.triggerAttackRelease(chord, '4n');
+    synth.triggerAttackRelease(chord, '4n');    // Play the chord
+    setTextBoxValue(chord);                     // Write the chord to the text box 
 
     setIsPlayingRandomChord(true);
     setTimeout(() => setIsPlayingRandomChord(false), 500);
@@ -56,7 +59,12 @@ const PlayChordButton = () => {
     const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
     const scale = ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5'];
-    synth.triggerAttackRelease(scale, '4n');
+
+    // Play through the scale
+    for (let i = 0; i < scale.length; i++) {
+      synth.triggerAttackRelease(scale[i], '4n');
+      await new Promise(resolve => setTimeout(resolve, 500)); // Wait for 1 second
+    }
 
     setIsPlayingScale(true);
 
@@ -70,7 +78,7 @@ const PlayChordButton = () => {
     const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
     // Generate a random index to select a random note
-    const randomNoteIndex = Math.floor(Math.random() * (notes.length - 7));
+    const randomNoteIndex = Math.floor(Math.random() * (notes.length));
 
     // Generate a scale based on the random note
     const scale = [
@@ -84,10 +92,20 @@ const PlayChordButton = () => {
       notes[(randomNoteIndex + 12) % notes.length]  // Octave note
     ];
 
-    synth.triggerAttackRelease(scale, '4n');
+    // Play through the scale
+    for (let i = 0; i < scale.length; i++) {
+      synth.triggerAttackRelease(scale[i], '4n');
+      // Write the note to the text box
+      setTextBoxValue(scale[i]);
+      await new Promise(resolve => setTimeout(resolve, 500)); // Wait for 1 second
+    }
 
     setIsPlayingRandomScale(true);
     setTimeout(() => setIsPlayingRandomScale(false), 500);
+  };
+
+  const handleTextBoxChange = (event) => {
+    setTextBoxValue(event.target.value);
   };
 
   return (
@@ -117,7 +135,7 @@ const PlayChordButton = () => {
           padding: '10px 20px',
           fontSize: '16px',
           cursor: isPlayingRandomChord ? 'not-allowed' : 'pointer',
-          backgroundColor: isPlayingRandomChord ? '#ccc' : '#007acc',
+          backgroundColor: isPlayingRandomChord ? '#ccc' : '#c511c7',
           color: 'white',
           border: 'none',
           borderRadius: '5px',
@@ -126,6 +144,8 @@ const PlayChordButton = () => {
         {isPlayingRandomChord ? 'Playing...' : 'Play Random Chord'}
       </button>
       <br /> <br />
+
+      {/* Button to play a C Scale */}
       <button
         onClick={playScale}
         disabled={isPlayingScale}
@@ -142,6 +162,30 @@ const PlayChordButton = () => {
         {isPlayingScale ? 'Playing...' : 'Play C Major Scale'}
       </button>
       <br /> <br />
+
+      {/* Button to play a Random Scale */}
+      <button
+        onClick={playRandomScale}             // Call the playRandomScale function on click
+        disabled={isPlayingRandomScale}       // Disable the button if isPlayingRandomScale usestate is true 
+        style={{
+          padding: '10px 20px',
+          fontSize: '16px',
+          cursor: isPlayingRandomScale ? 'not-allowed' : 'pointer',
+          backgroundColor: isPlayingRandomScale ? '#ccc' : '#c511c7',
+          color: 'white',
+          border: 'none',
+          borderRadius: '5px',
+        }}
+      >
+        {isPlayingRandomScale ? 'Playing...' : 'Play Random Scale'}
+      </button>
+
+      {/* Inputs for a user to select key, scale, or chord */}
+      <br /> <br />
+
+        <br /> <br />
+        
+      {/* Button To play constructed scale or chord */}
       <button
         onClick={playRandomScale}
         disabled={isPlayingRandomScale}
@@ -155,8 +199,22 @@ const PlayChordButton = () => {
           borderRadius: '5px',
         }}
       >
-        {isPlayingRandomScale ? 'Playing...' : 'Play Random Scale'}
+        Play Constructed Scale or Chord
       </button>
+
+      {/*  Now We create a text box to display information, both for fun and debugging purposes!  */}
+      <div style={{ marginTop: '20px', border: '1px solid #ccc', padding: '10px', borderRadius: '5px' }}>
+        <p>isPlayingChord: {isPlayingChord.toString()}</p>
+        <p>isPlayingRandomChord: {isPlayingRandomChord.toString()}</p>
+        <p>isPlayingScale: {isPlayingScale.toString()}</p>
+        <p>isPlayingRandomScale: {isPlayingRandomScale.toString()}</p>
+        <input
+          type="text"
+          value={textBoxValue}
+          onChange={handleTextBoxChange}
+          style={{ marginTop: '10px', padding: '5px', width: '70%', fontSize: '16px' }}
+        />
+      </div>
     </div>
   );
 };
