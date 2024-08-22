@@ -15,7 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "gatsby": "^5.13.5",
+    "gatsby": "^5.13.7",
     "gatsby-remark-audio": "^1.0.2",
     "gatsby-remark-embedder": "^7.0.0",
     "gatsby-source-filesystem": "^5.13.1",

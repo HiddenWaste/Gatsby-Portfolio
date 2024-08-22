@@ -2,9 +2,16 @@ import React, { useState } from 'react';
 import * as Tone from 'tone';
 
 // Constant for all notes
-const notes = ['C4', 'C#4', 'D4', 'D#4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A4', 'A#4', 'B4'];
+const NOTES = ['C4', 'C#4', 'D4', 'D#4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A4', 'A#4', 'B4'];
 
-
+const INTERVALS = {
+  'major': [2, 2, 1, 2, 2, 2],        // Whole, Whole, Half, Whole, Whole, Whole, Half
+  'minor': [2, 1, 2, 2, 1, 2],        // Whole, Half, Whole, Whole, Half, Whole, Whole
+  'dorian': [2, 1, 2, 2, 2, 1],       // Whole, Half, Whole, Whole, Whole, Half, Whole
+  'mixolydian': [2, 2, 1, 2, 2, 1],   // Whole, Whole, Half, Whole, Whole, Half, Whole
+  'phrygian': [1, 2, 2, 2, 1, 2],     // Half, Whole, Whole, Whole, Half, Whole, Whole
+  'lydian': [2, 2, 2, 1, 2, 1]        // Whole, Whole, Whole, Half, Whole, Half, Whole
+};
 
 const PlayChordButton = () => {
 
@@ -30,19 +37,43 @@ const PlayChordButton = () => {
     setTimeout(() => setIsPlayingChord(false), 500);
   };
 
+  //play given chord
+  const playSetChord = async (rootNote, scaleType) => {
+    await Tone.start();
+    const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+
+    const intervals = INTERVALS[scaleType];
+    const notes = [rootNote];
+
+    // Generate the notes of the chord based on the root note and scale type
+    for (let i = 0; i < intervals.length; i++) {
+      const previousNote = Tone.Frequency(notes[i]);
+      const nextNote = previousNote.transpose(intervals[i]);
+      notes.push(nextNote.toNote());
+    }
+
+    synth.triggerAttackRelease(notes, '4n');
+    setTextBoxValue(notes);
+
+    setIsPlayingChord(true);
+
+    // Reset the playing state after the chord is played
+    setTimeout(() => setIsPlayingChord(false), 500);
+  };
+
   // Play a Random Chord
   const playRandomChord = async () => {
     await Tone.start(); // Ensure the audio context is started
     const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
     // Generate a random index to select a random note
-    const randomNoteIndex = Math.floor(Math.random() * (notes.length - 7));
+    const randomNoteIndex = Math.floor(Math.random() * (NOTES.length - 7));
 
     // Generate a chord based on the random note
     const chord = [
-      notes[randomNoteIndex],                       // Root note
-      notes[(randomNoteIndex + 4) % notes.length],  // Third note
-      notes[(randomNoteIndex + 7) % notes.length]   // Fifth note
+      NOTES[randomNoteIndex],                       // Root note
+      NOTES[(randomNoteIndex + 4) % NOTES.length],  // Third note
+      NOTES[(randomNoteIndex + 7) % NOTES.length]   // Fifth note
     ];
 
     synth.triggerAttackRelease(chord, '4n');    // Play the chord
@@ -78,18 +109,18 @@ const PlayChordButton = () => {
     const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
     // Generate a random index to select a random note
-    const randomNoteIndex = Math.floor(Math.random() * (notes.length));
+    const randomNoteIndex = Math.floor(Math.random() * (NOTES.length));
 
     // Generate a scale based on the random note
     const scale = [
-      notes[randomNoteIndex],                       // Root note
-      notes[(randomNoteIndex + 2) % notes.length],  // Second note
-      notes[(randomNoteIndex + 4) % notes.length],  // Third note
-      notes[(randomNoteIndex + 5) % notes.length],  // Fourth note
-      notes[(randomNoteIndex + 7) % notes.length],  // Fifth note
-      notes[(randomNoteIndex + 9) % notes.length],  // Sixth note
-      notes[(randomNoteIndex + 11) % notes.length], // Seventh note
-      notes[(randomNoteIndex + 12) % notes.length]  // Octave note
+      NOTES[randomNoteIndex],                       // Root note
+      NOTES[(randomNoteIndex + 2) % NOTES.length],  // Second note
+      NOTES[(randomNoteIndex + 4) % NOTES.length],  // Third note
+      NOTES[(randomNoteIndex + 5) % NOTES.length],  // Fourth note
+      NOTES[(randomNoteIndex + 7) % NOTES.length],  // Fifth note
+      NOTES[(randomNoteIndex + 9) % NOTES.length],  // Sixth note
+      NOTES[(randomNoteIndex + 11) % NOTES.length], // Seventh note
+      NOTES[(randomNoteIndex + 12) % NOTES.length]  // Octave note
     ];
 
     // Play through the scale
@@ -201,6 +232,32 @@ const PlayChordButton = () => {
       >
         Play Constructed Scale or Chord
       </button>
+
+        {/* {/* SECTION OF CREATING A CHORD FROM USER INPUT
+          A few things:
+            - Input Text box for 'scale_type'
+            - Dropdown Box from NOTES for root_note
+            - Button to pass those boxes into the playSetChord function
+
+        <div>
+          <h2>Create a Chord</h2>
+          <label htmlFor="scaleType">Scale Type:</label>
+          <input type="text" id="scaleType" />
+          <br />
+          <label htmlFor="rootNote">Root Note:</label>
+          <select id="rootNote">
+            {NOTES.map((note, index) => (
+              <option key={index} value={note}>
+                {note}
+              </option>
+            ))}
+          </select>
+          <br />
+          <button onClick={console.log('The Button Has Been Pressed')}>Create Chord</button>
+        </div> 
+        */}
+
+
 
       {/*  Now We create a text box to display information, both for fun and debugging purposes!  */}
       <div style={{ marginTop: '20px', border: '1px solid #ccc', padding: '10px', borderRadius: '5px' }}>
