@@ -4,6 +4,9 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
 
+// importing sidebar status images
+import { opensidebar, closesidebar } from "../images";
+
 // Style Settings for Toggle Button for Sidebar
 const toggleButtonStyles = {
   cursor: 'pointer',
@@ -16,6 +19,13 @@ const toggleButtonStyles = {
   top: '10px',
   left: '10px',
   zIndex: '1000',
+};
+
+// Style for the button images
+const buttonImageStyles = {
+  width: '20px',
+  height: '20px',
+  filter: 'invert(1)', // Makes the image white to match the button color scheme
 };
 
 // Style Settings for The Sidebar Itself
@@ -48,18 +58,22 @@ const Sidebar = () => {
   return (
     <>
       <button onClick={toggleSidebar} style={toggleButtonStyles}>
-        {isOpen ? '|==|' : '=='}
+        <img 
+          src={isOpen ? opensidebar : closesidebar} 
+          alt={isOpen ? "Close sidebar" : "Open sidebar"}
+          style={buttonImageStyles}
+        />
       </button>
       <nav style={sidebarStyles(isOpen)}>
         {isOpen && (
           <>
-            <h2>Navigation</h2>
+            <br></br>
+            <h1>Navigation</h1>
             <Link to="/" style={linkStyles}>Home</Link>
             <Link to="/second-page" style={linkStyles}>Second Page</Link>
             <Link to="/github-fun" style={linkStyles}>Fun GitHub Stuff</Link>
             <Link to="/birds" style={linkStyles}>Birds of South Dakota</Link>
-            <Link to="/about-me" style={linkStyles}>About Me</Link>
-            <h2> Blog </h2>
+            <Link to="/about-me" style={linkStyles}>About Me / Resume</Link>
             <Link to="/blog" style={linkStyles}>Blog Homepage</Link>
             {/* Add more links here */}
           </>

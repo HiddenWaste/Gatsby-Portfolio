@@ -1,9 +1,9 @@
 // src/pages/about-me.js
-
 // Necessary Imports
 import React from "react";
 import Layout from "../components/layout";
 import { Link } from "gatsby";
+import { me0 } from "../images"; // Importing the image from the images folder
 
 const pageStyles = {
   background: "#d9a9ff",
@@ -13,6 +13,27 @@ const pageStyles = {
 
 const bioImageStyles = {
   border: "3px solid black",
+  width: "300px", // Made it a bit smaller to fit better side by side
+  height: "auto",
+  borderRadius: "10px",
+};
+
+// New style for the bio container
+const bioContainerStyles = {
+  display: "flex",
+  alignItems: "flex-start", // Aligns items to the top
+  gap: "20px", // Space between image and bio info
+  backgroundColor: "#f0f0f0", // Different background color
+  padding: "20px",
+  borderRadius: "15px",
+  border: "2px solid #333",
+  marginBottom: "30px",
+};
+
+// Style for the bio info section
+const bioInfoStyles = {
+  flex: 1, // Takes up remaining space
+  fontSize: "16px",
 };
 
 const interestListStyles = {
@@ -27,33 +48,36 @@ const AboutMePage = () => {
         <h1>About Me</h1>
         <br />
         <br />
-        <div>
-          <figure id="bio">
+        
+        {/* Bio Container with image and info side by side */}
+        <div style={bioContainerStyles}>
+          <div>
             <img
-              src="/images/MathHomework.PNG"
+              src={me0}
               style={bioImageStyles}
               alt="biopic"
             />
-            <figcaption>
-              <ul>
-                <li>Age: 23</li>
-                <li>Hometown: Brandon, SD</li>
-                <li>
-                  Majors: Digital Sound Design <br />
-                  and Artificial Intelligence
-                </li>
-                <li>
-                  <a href="https://linktr.ee/cartergordon" target="_blank" rel="noopener noreferrer">
-                    Linktree
-                  </a>
-                </li>
-              </ul>
-            </figcaption>
-          </figure>
+          </div>
+          
+          <div style={bioInfoStyles}>
+            <h3>Carter Gordon</h3>
+            <ul>
+              <li>Age: 24</li>
+              <li>Located: Brandon, SD</li>
+              <li>
+                B.S in Digital Sound Design <br />
+                B.S. in Artificial Intelligence <br />
+                Creative Coding Certificate
+              </li>
+            </ul>
+            <p><a href="https://linktr.ee/cartergordon" target="_blank" rel="noopener noreferrer">
+                  Linktree
+                </a></p>
+          </div>
         </div>
 
         {/* Occupation Listing */}
-        <div id="OccupationList">   
+        {/* <div id="OccupationList">  
           Current Job Occupations:
           <ul>
             <li>Sound Tech for Madison High School</li>
@@ -64,7 +88,7 @@ const AboutMePage = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div>
           My various interests include:
@@ -73,11 +97,9 @@ const AboutMePage = () => {
             <li>Coding / Computer related projects</li>
             <li>Listening to Music</li>
             <li>Watching Movies / TV</li>
-            <li>
-              Reading (Currently reading The Prince by Nicolo Machiavelli)
-            </li>
+            <li>Reading</li>
           </ul>
-          <p> Most of these are showcased to some degree on my <Link to="/blog">Blog</Link>.   </p>
+          <p> Most of these are showcased to some degree on my <Link to="/blog">Blog</Link>.</p>
         </div>
       </main>
     </Layout>
@@ -85,5 +107,4 @@ const AboutMePage = () => {
 };
 
 export default AboutMePage;
-
 export const Head = () => <title>About Me</title>;

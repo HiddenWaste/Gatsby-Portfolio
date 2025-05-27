@@ -9,9 +9,6 @@ const SecondPage = () => {
   return (
     <Layout>
       <main style={pageStyles}>
-        <p>Here we shall begin with our very own testing!</p>
-
-
         {/* Gatsby Logo from first starter page!*/}
         <img
           alt="deadpoolwolverine"
@@ -20,13 +17,41 @@ const SecondPage = () => {
 
         <br /><br /><br />
 
-        <h1 style={headingStyles}> Let's Check out some audio capabilities? </h1>
+        <h1 style={headingStyles}> Audio Projects From Glitch </h1>
 
-        <br /><br />
+        <h2> F-E-R-M</h2>
+        <div style={{ height: "420px", width: "100%" }}>
+  <iframe
+    src="https://glitch.com/embed/#!/embed/f-e-r-m?path=&previewSize=0"
+    title="f-e-r-m on Glitch"
+    allow="geolocation; microphone; camera; midi; encrypted-media; xr-spatial-tracking; fullscreen"
+    allowFullScreen
+    style={{ height: "100%", width: "100%", border: 0 }}
+  />
+  </div>
+  <br></br>
+  <h2>Word2Vec Sonic Poetry</h2>
+  <div style={{ height: "420px", width: "100%" }}>
+  <iframe
+    src="https://glitch.com/embed/#!/embed/etude---1?path=readme.md&previewSize=0"
+    title="etude---1 on Glitch"
+    allow="geolocation; microphone; camera; midi; encrypted-media; xr-spatial-tracking; fullscreen"
+    allowFullScreen
+    style={{ height: "100%", width: "100%", border: 0 }}
+  />
+</div>
+<br></br><br></br>
+
+    <h2>Videos of Projects from my YouTube</h2>
+
+    {/*  Blanket-Synth  */}
+    {/*  Current Condition of P.A.C.E  */}
+    {/*  Construction Synth V0 (proof of concept)  */}
+
 
         <p style={paragraphStyles}>
-
-        <h2 style={headingAccentStyles}>Audio Embedding!</h2>
+  <br></br><br></br>
+        <h2 style={headingAccentStyles}>Various Embeddings!</h2>
 
         Here, I'm starting off with embedding tracks from a few different services to showcase
         to myself how to use them overall, and to figure out which ones I will use most. These
@@ -65,6 +90,10 @@ allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; pic
 referrerpolicy="strict-origin-when-cross-origin" 
 allowfullscreen>
 </iframe>
+
+<br></br>
+
+
 
         </p>
          
