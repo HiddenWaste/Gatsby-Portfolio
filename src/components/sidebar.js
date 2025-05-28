@@ -70,6 +70,7 @@ const Sidebar = () => {
             <br></br>
             <h1>Navigation</h1>
             <Link to="/" style={linkStyles}>Home</Link>
+            <Link to="/projects" style={linkStyles}>Projects</Link>
             <Link to="/second-page" style={linkStyles}>Second Page</Link>
             <Link to="/github-fun" style={linkStyles}>Fun GitHub Stuff</Link>
             <Link to="/birds" style={linkStyles}>Birds of South Dakota</Link>

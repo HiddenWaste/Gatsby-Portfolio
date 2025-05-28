@@ -3,39 +3,29 @@
 import React from "react";
 import Layout from "../components/layout"; // Corrected import path
 import { pageStyles, headingStyles, headingAccentStyles, paragraphStyles } from "../styles";
-import { deadpoolwolverine } from "../images";
 
 const SecondPage = () => {
   return (
     <Layout>
       <main style={pageStyles}>
         {/* Gatsby Logo from first starter page!*/}
-        <img
-          alt="deadpoolwolverine"
-          src={deadpoolwolverine}
-        />
-
-        <br /><br /><br />
-
-        <h1 style={headingStyles}> Audio Projects From Glitch </h1>
-
-        <h2> F-E-R-M</h2>
+        <h1 style={headingStyles}> Audio Projects  </h1>
+        <h2> Web Projects </h2>
+        <h3> F-E-R-M</h3>
         <div style={{ height: "420px", width: "100%" }}>
   <iframe
     src="https://glitch.com/embed/#!/embed/f-e-r-m?path=&previewSize=0"
     title="f-e-r-m on Glitch"
-    allow="geolocation; microphone; camera; midi; encrypted-media; xr-spatial-tracking; fullscreen"
     allowFullScreen
     style={{ height: "100%", width: "100%", border: 0 }}
   />
   </div>
   <br></br>
-  <h2>Word2Vec Sonic Poetry</h2>
+  <h3>Word2Vec Sonic Poetry</h3>
   <div style={{ height: "420px", width: "100%" }}>
   <iframe
     src="https://glitch.com/embed/#!/embed/etude---1?path=readme.md&previewSize=0"
     title="etude---1 on Glitch"
-    allow="geolocation; microphone; camera; midi; encrypted-media; xr-spatial-tracking; fullscreen"
     allowFullScreen
     style={{ height: "100%", width: "100%", border: 0 }}
   />
