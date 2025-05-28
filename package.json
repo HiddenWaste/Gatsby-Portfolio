@@ -23,6 +23,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.12",
-    "tone": "^15.0.4"
+    "tone": "^15.0.4",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1"
   }
 }
