@@ -3,7 +3,7 @@
 import React from "react";
 import Layout from "../components/layout";
 import { Link } from "gatsby";
-import { me0 } from "../images"; // Importing the image from the images folder
+// import { me0 } from "../images"; // Importing the image from the images folder
 
 const pageStyles = {
   background: "#d9a9ff",
@@ -52,11 +52,6 @@ const AboutMePage = () => {
         {/* Bio Container with image and info side by side */}
         <div style={bioContainerStyles}>
           <div>
-            <img
-              src={me0}
-              style={bioImageStyles}
-              alt="biopic"
-            />
           </div>
           
           <div style={bioInfoStyles}>
