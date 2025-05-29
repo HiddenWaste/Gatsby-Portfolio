@@ -8,12 +8,12 @@ const ProjectsPage = () => {
   return (
     <Layout>
       <main style={pageStyles}>
-        <h1 style={headingStyles}>Web Audio Projects</h1>
-        
         <p style={paragraphStyles}>
+          <h1 style={headingStyles}>Web Audio Projects</h1>
           Here are some of my interactive web audio projects! These showcase various aspects of 
           digital sound design, music theory, and creative coding with web technologies.
         </p>
+        <br></br>
 
         {/* F-E-R-M Project */}
         <h2 style={headingAccentStyles}>F-E-R-M</h2>
@@ -21,6 +21,7 @@ const ProjectsPage = () => {
           An interactive web audio project exploring frequency, envelope, rhythm, and modulation.
         </p>
         <div style={{ height: "600px", width: "100%", marginBottom: "40px" }}>
+          <figure style={{ margin: "0 auto", width: "100%", height: "100%" }}>
           <iframe
             src="https://f-e-r-m.netlify.app/"
             title="F-E-R-M Web Audio Project"
@@ -32,7 +33,11 @@ const ProjectsPage = () => {
               borderRadius: "8px"
             }}
           />
+          <figcaption><a href="https://f-e-r-m.netlify.app/">Webpage</a>    <a href="https://github.com/HiddenWaste/F-E-R-M">GitHub Repo</a></figcaption>
+          </figure>
         </div>
+
+        <br></br><br></br>
 
         {/* Word2Vec Sonic Poetry Project */}
         <h2 style={headingAccentStyles}>Word2Vec Sonic Poetry</h2>
@@ -41,6 +46,7 @@ const ProjectsPage = () => {
           creating sonic poetry through word vector relationships.
         </p>
         <div style={{ height: "600px", width: "100%", marginBottom: "40px" }}>
+          <figure style={{ margin: "0 auto", width: "100%", height: "100%" }}>
           <iframe
             src="https://word2vec-sonic-poetry.netlify.app/"
             title="Word2Vec Sonic Poetry Project"
@@ -52,8 +58,11 @@ const ProjectsPage = () => {
               borderRadius: "8px"
             }}
           />
+          <figcaption><a href="https://word2vec-sonic-poetry.netlify.app/">Webpage</a>    <a href="https://github.com/HiddenWaste/Word2Vec-Sonic-Poetry">GitHub Repo</a></figcaption>
+          </figure>
         </div>
 
+            <br></br><br></br>
         {/* YouTube Videos Section */}
         <h2 style={headingAccentStyles}>Project Videos</h2>
         <p style={paragraphStyles}>
@@ -61,12 +70,12 @@ const ProjectsPage = () => {
         </p>
         
         <div style={{ marginBottom: "30px" }}>
-          <h3>Construction Synth V0 (Proof of Concept)</h3>
+          <h3>Blanket-Synth 1.0</h3>
           <iframe
             width="100%"
             height="315"
-            src="https://www.youtube.com/embed/zgXgkpu7pkg?si=uC4PXtPhm9L-oyKQ"
-            title="Construction Synth YouTube video"
+            src="https://www.youtube.com/watch?v=Us90SciE54w"
+            title="Blanket Synth Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"

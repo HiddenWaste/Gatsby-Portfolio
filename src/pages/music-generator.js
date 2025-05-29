@@ -4,14 +4,14 @@ import * as Tone from 'tone';
 // Constant for all notes
 const NOTES = ['C4', 'C#4', 'D4', 'D#4', 'E4', 'F4', 'F#4', 'G4', 'G#4', 'A4', 'A#4', 'B4'];
 
-const INTERVALS = {
-  'major': [2, 2, 1, 2, 2, 2],        // Whole, Whole, Half, Whole, Whole, Whole, Half
-  'minor': [2, 1, 2, 2, 1, 2],        // Whole, Half, Whole, Whole, Half, Whole, Whole
-  'dorian': [2, 1, 2, 2, 2, 1],       // Whole, Half, Whole, Whole, Whole, Half, Whole
-  'mixolydian': [2, 2, 1, 2, 2, 1],   // Whole, Whole, Half, Whole, Whole, Half, Whole
-  'phrygian': [1, 2, 2, 2, 1, 2],     // Half, Whole, Whole, Whole, Half, Whole, Whole
-  'lydian': [2, 2, 2, 1, 2, 1]        // Whole, Whole, Whole, Half, Whole, Half, Whole
-};
+// const INTERVALS = {
+//   'major': [2, 2, 1, 2, 2, 2],        // Whole, Whole, Half, Whole, Whole, Whole, Half
+//   'minor': [2, 1, 2, 2, 1, 2],        // Whole, Half, Whole, Whole, Half, Whole, Whole
+//   'dorian': [2, 1, 2, 2, 2, 1],       // Whole, Half, Whole, Whole, Whole, Half, Whole
+//   'mixolydian': [2, 2, 1, 2, 2, 1],   // Whole, Whole, Half, Whole, Whole, Half, Whole
+//   'phrygian': [1, 2, 2, 2, 1, 2],     // Half, Whole, Whole, Whole, Half, Whole, Whole
+//   'lydian': [2, 2, 2, 1, 2, 1]        // Whole, Whole, Whole, Half, Whole, Half, Whole
+// };
 
 const PlayChordButton = () => {
 
@@ -38,28 +38,28 @@ const PlayChordButton = () => {
   };
 
   //play given chord
-  const playSetChord = async (rootNote, scaleType) => {
-    await Tone.start();
-    const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+  // const playSetChord = async (rootNote, scaleType) => {
+  //   await Tone.start();
+  //   const synth = new Tone.PolySynth(Tone.Synth).toDestination();
 
-    const intervals = INTERVALS[scaleType];
-    const notes = [rootNote];
+  //   const intervals = INTERVALS[scaleType];
+  //   const notes = [rootNote];
 
-    // Generate the notes of the chord based on the root note and scale type
-    for (let i = 0; i < intervals.length; i++) {
-      const previousNote = Tone.Frequency(notes[i]);
-      const nextNote = previousNote.transpose(intervals[i]);
-      notes.push(nextNote.toNote());
-    }
+  //   // Generate the notes of the chord based on the root note and scale type
+  //   for (let i = 0; i < intervals.length; i++) {
+  //     const previousNote = Tone.Frequency(notes[i]);
+  //     const nextNote = previousNote.transpose(intervals[i]);
+  //     notes.push(nextNote.toNote());
+  //   }
 
-    synth.triggerAttackRelease(notes, '4n');
-    setTextBoxValue(notes);
+  //   synth.triggerAttackRelease(notes, '4n');
+  //   setTextBoxValue(notes);
 
-    setIsPlayingChord(true);
+  //   setIsPlayingChord(true);
 
-    // Reset the playing state after the chord is played
-    setTimeout(() => setIsPlayingChord(false), 500);
-  };
+  //   // Reset the playing state after the chord is played
+  //   setTimeout(() => setIsPlayingChord(false), 500);
+  // };
 
   // Play a Random Chord
   const playRandomChord = async () => {
