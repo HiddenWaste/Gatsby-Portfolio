@@ -29,7 +29,7 @@ const IndexPage = () => {
           </div>
 
           <div id="musicGeneratorContainer">
-            <Link to="/projects/smg" style={linkStyle}>Music Generator</Link>
+            <Link to="/projects/smg" style={linkStyle}>S-M-G</Link>
           </div>
           
         </div>

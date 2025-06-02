@@ -73,6 +73,12 @@ const Sidebar = () => {
             <Link to="/about-me" style={linkStyles}>About Me / Resume</Link>
             <Link to="/blog" style={linkStyles}>Blog</Link>
             <Link to="/github-fun" style={linkStyles}>Fun GitHub Stuff</Link>
+
+
+            <h2>Projects</h2>
+            <Link to="/projects/ferm" style={linkStyles}>F-E-R-M</Link>
+            <Link to="/projects/smg" style={linkStyles}>S-M-G</Link>
+            <Link to="/projects/sonicPoetry" style={linkStyles}>Word2Vec Sonic Poetry</Link>
             {/* Add more links here */}
           </>
         )}
