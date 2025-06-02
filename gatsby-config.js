@@ -14,6 +14,13 @@ module.exports = {
         path: `${__dirname}/src/blogs/`,     // Path for blog markdowns
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`,    // Path for images
+      },
+    },
     `gatsby-transformer-remark`,            // Markdown Plugin Used
   ],
 };

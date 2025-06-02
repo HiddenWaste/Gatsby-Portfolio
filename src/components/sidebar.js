@@ -68,13 +68,11 @@ const Sidebar = () => {
         {isOpen && (
           <>
             <br></br>
-            <h1>Navigation</h1>
+            <h1>Navigate</h1>
             <Link to="/" style={linkStyles}>Home</Link>
-            <Link to="/projects" style={linkStyles}>Projects</Link>
-            <Link to="/github-fun" style={linkStyles}>Fun GitHub Stuff</Link>
             <Link to="/about-me" style={linkStyles}>About Me / Resume</Link>
-            <Link to="/blog" style={linkStyles}>Blog Homepage</Link>
-            <Link to="/music-generator" style={linkStyles}>Music Generator</Link>
+            <Link to="/blog" style={linkStyles}>Blog</Link>
+            <Link to="/github-fun" style={linkStyles}>Fun GitHub Stuff</Link>
             {/* Add more links here */}
           </>
         )}

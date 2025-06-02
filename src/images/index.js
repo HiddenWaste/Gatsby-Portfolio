@@ -1,6 +1,4 @@
-// src/images/index.js
-export { default as goldendeer } from './goldendeer.png';
-export { default as jollyroger } from './jollyroger.png';
+
 // export { default as me0 } from './me0.jpg';
 // export { default as me1 } from './me1.jpg';
 // export { default as me2 } from './me2.jpg';

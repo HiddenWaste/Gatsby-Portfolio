@@ -41,6 +41,23 @@ const interestListStyles = {
   padding: "10px",
 };
 
+// Style for the resume section
+const resumeSectionStyles = {
+  marginTop: "30px",
+  backgroundColor: "#f0f0f0",
+  padding: "20px",
+  borderRadius: "15px",
+  border: "2px solid #333",
+};
+
+const resumeIframeStyles = {
+  width: "100%",
+  height: "800px",
+  border: "2px solid #ddd",
+  borderRadius: "8px",
+  marginTop: "15px",
+};
+
 const AboutMePage = () => {
   return (
     <Layout>
@@ -95,6 +112,21 @@ const AboutMePage = () => {
             <li>Reading</li>
           </ul>
           <p> Most of these are showcased to some degree on my <Link to="/blog">Blog</Link>.</p>
+        </div>
+
+        {/* Resume Section */}
+        <div style={resumeSectionStyles}>
+          <h2>My Resume</h2>
+          <p>Here's my current resume (you can also <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">download it directly</a>):</p>
+          <iframe
+            src="/resume.pdf"
+            style={resumeIframeStyles}
+            title="Carter Gordon Resume"
+          >
+            <p>Your browser does not support PDFs. 
+               <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Download the PDF</a> instead.
+            </p>
+          </iframe>
         </div>
       </main>
     </Layout>

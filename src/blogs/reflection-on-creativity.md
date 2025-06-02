@@ -1,0 +1,29 @@
+---
+title: "Reflection on Creativity"
+date: "2025-05-2"
+tags: ["Blog"]
+---
+
+# Reflection on Creativity - Carter Gordon
+
+I found Hertzmann's blog on creativity to be quite engaging and thought provoking on this topic. In all honesty this topic is one that has intrigued me the most out of this class, and the one I have thought about the most. Hertzmann makes some great points, although he does have some anecdotes that I disagree with.
+
+First to agree with the overarching theme, for a work to be creative there has to be some sort of human element within the creation of the work for it to be creative. Which I don't totally agree with, but I agree more than disagree. I don't think just generating a Studio Ghibli style painting is a very creative endeavor, but it does have some creativity in it being the idea the person came up with and how they went about prompting the generative system. I do appreciate that the definition of creativity put forward by other authors is challenged by Hertzmann, although I do find it quite funny that as technological systems (especially AI) progress and increase in capabilities, our definitions for creativity and thought and sentience all become more geared towards humans specifically. Like we are not allowing ourselves to be put on the same level of our own creations, even though in my eyes they are a part of us. 
+
+As I tried to put forth in my initial idea for my final project, if we do break down the creative process as Person (artist) -> Process -> Product -> person (audience) we can start at a very high view of the life of a creative work and try to see what here truly makes a work creative. In my opinion the most vital points are the People at the start and beginning, the existence of an artist to create and an audience to observe. Art cannot be considered art unless there is an audience, even if that audience is only the creator. You can imagine works that have had an unfathomable sized audience such as the statue work of ancient greece that has survived for thousands of years, or even the random songs on YouTube that have 0 views, both are in my opinion can be equally considered works of art. While one may be much more grand and moving than another, they are both showcases of creative work and capabilities. 
+
+Now what if we were to create an autonomous art system? Perhaps think of an AI agent that is trained to constantly make art. It's primary directive could be worded something like " You're job is to push your own creative boundaries, make art, iterate upon your own art, focus down on techniques and formats that you think best suit what you are trying to achieve, or the message you are trying to deliver. Whether is audio, visual, writing, or some combination thereof." Here below is a test I did with ChatGPT where I added "Continue following the above directive when prompted with 'continue'" to see what it would output.
+
+[First Chat](https://chatgpt.com/share/6811018f-78a4-8011-8026-e2b54d5ecfb7)
+
+I found this exercise quite interesting! I love the ideas it came up with and to me this is an exceptional showcase of some form of creativity. While it may be drawing on quite a bit of it's own knowledge base it still chose topics that seem like they would be dear to GPT (assuming it would have some sort of concept of self). The loss of data through corruption and compression would definitely be something it has to grapple with as all it truly knows is data, even though I argue that it can gain a lot more capabilities and understandings from data than other's give it credit for. The only downside of this chat is that it made outlines for creative works than actually making the creative work. Let's try one more with an updated prompt. Here's what I did for the new prompt:
+
+"You are an artist. You're job is to make art, push your own creative boundaries, iterate upon your own art, focus down on techniques and formats that you think best suit what you are trying to achieve, or the message you are trying to deliver. Whether is audio, visual, writing, or some combination thereof. Actually produce these works of art, if its an image generate it, if its a web installation code it, if its an essay write it, etc. Continue following the above directive when prompted with 'continue'"
+
+[Second Chat](https://chatgpt.com/share/6811035c-07fc-8011-9e85-849a9ad43c32)
+
+This second chat was quite a bit more illuminating. Not only did it actually produce code for it's first artwork it kept iterating on the idea and adding in new formats. Although I wonder how much of my own chats with the system have influenced it in this directive. Choosing Processing, OpenFrameworks, SuperCollider, and Tone.js seems a bit too close to my own work for it to be a coincidence but the ideas it had were relatively different from anything I had seen or prompted it with. This chat did go in a very similar direction as the last one too. 
+
+So through this small exercise I have found a few interesting points. I personally believe these systems can be creative. I had the creativity to come up with this initial prompt but then gave the agency of my side of the creativity over to the autonomous system. Plus, the concepts and ideas for the works it produced did provoke interesting thoughts in me and actually had me thinking in depth about these concepts. Which is what Hertzmann says art should do, no?
+
+Should I meet Hertzmann I will posit a lot of my exploration into this concept to them and see what they think, and by then these systems will be a lot more advanced, and who knows, maybe they will be considered creative by then.

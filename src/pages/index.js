@@ -3,8 +3,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import Layout from "../components/layout"; // Corrected import path
-import { pageStyles, headingStyles, headingAccentStyles, linkStyle, paragraphStyles } from "../styles";
-import { goldendeer, jollyroger } from "../images";
+import { pageStyles, headingStyles, headingAccentStyles, linkStyle, paragraphStyles, footerStyles } from "../styles";
 
 const IndexPage = () => {
   return (
@@ -12,11 +11,31 @@ const IndexPage = () => {
       <main style={pageStyles}>
         <h1 style={headingStyles}>
           Welcome!
-          <br />
-          <span style={headingAccentStyles}>- This is my Portfolio / Blog! 🎉🎉</span>
+          <span style={headingAccentStyles}> This is my Portfolio! 🎉🎉</span>
         </h1>
 
         {/* Carousel of Homepage Images */}
+
+
+        {/* Project Showcase */}
+        <div id="projectsContainer">
+
+          <div id="fermContainer">
+        <Link to="/projects/ferm" style={linkStyle}>F-E-R-M</Link>
+          </div>
+
+          <div id="sonicPoetryContainer">
+            <Link to="/projects/sonicPoetry" style={linkStyle}>Word2Vec Sonic Poetry</Link>
+          </div>
+
+          <div id="musicGeneratorContainer">
+            <Link to="/projects/smg" style={linkStyle}>Music Generator</Link>
+          </div>
+          
+        </div>
+
+        {/* End Showcase */}
+        <br></br> <br></br>
 
         <p style={paragraphStyles}>
           Here I have my projects showcased as my portfolio, and a blog page where I make posts ranging from
@@ -31,30 +50,16 @@ const IndexPage = () => {
         </p>
 
 
+      <div style={footerStyles}>
         <p>
-          <h2 style={headingStyles}>
-            Dev Links!!
-          </h2>
           404 pages, for debugging and style<br />
           <Link to="/404" style={linkStyle}>Custom 404 Page</Link> <br />
           <Link to="/fakepagelink" style={linkStyle}>404 Page</Link>
           <br />
           <br />
         </p>
-
-        <img
-          alt="Golden Deer Icon"
-          src={goldendeer}
-          width='100' 
-          height='125'
-        />
-
-      <img
-        alt="Jolly Roger Icon"
-        src={jollyroger}
-        width='100' 
-        height='125'
-      />
+      </div>
+        
 
       </main>
     </Layout>

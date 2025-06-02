@@ -42,3 +42,15 @@ export const pageStyles = {
     fontSize: 16,
     verticalAlign: "5%",
   };
+
+  export const footerStyles = {
+  position: "fixed",
+  bottom: 0,
+  left: 0,
+  width: "100%",
+  backgroundColor: "#333",
+  color: "white",
+  textAlign: "center",
+  padding: "10px",
+  zIndex: 500
+};
