@@ -10,6 +10,8 @@ export {default as closesidebar} from './closed-sidebar.png';
 export {default as ferm} from "./FERM.png"
 export {default as word2vec} from "./word2vec.png"
 export {default as smg} from "./smg.png"
+export {default as blanketsynth} from "./blanket-synth.png"
+
 // This page is used to make images very easily referenced
 //   via importing (as shown in the main index.js)
 //   as well as wen referncing the image itself from the import

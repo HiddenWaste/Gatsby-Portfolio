@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Link } from "gatsby";
-import { ferm, word2vec, smg } from "../images";
+import { ferm, word2vec, smg, blanketsynth } from "../images";
 
 import Layout from "../components/layout";
 import { 
@@ -43,6 +43,12 @@ const IndexPage = () => {
       title: "S-M-G", 
       link: "/projects/smg",
       image: smg
+    },
+    {
+      id: "blanket-synth",
+      title:"Blanket-Synth",
+      link: "/projects/blanket-synth",
+      image: blanketsynth
     }
   ];
 

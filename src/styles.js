@@ -51,7 +51,7 @@ export const pageStyles = {
   backgroundColor: "#333",
   color: "white",
   textAlign: "center",
-  padding: "3px",
+  padding: "0px",
   zIndex: 500
 };
 

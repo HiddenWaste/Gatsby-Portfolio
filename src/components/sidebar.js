@@ -79,6 +79,7 @@ const Sidebar = () => {
             <Link to="/projects/ferm" style={linkStyles}>F-E-R-M</Link>
             <Link to="/projects/smg" style={linkStyles}>S-M-G</Link>
             <Link to="/projects/sonicPoetry" style={linkStyles}>Word2Vec Sonic Poetry</Link>
+            <Link to="/projects/blanket-synth" style={linkStyles}>Blanket Synth 1.0</Link>
             {/* Add more links here */}
           </>
         )}
