@@ -16,7 +16,7 @@ const IndexPage = () => {
 
         {/* Carousel of Homepage Images */}
 
-
+          <h2>Check out some of my online projects below!</h2>
         {/* Project Showcase */}
         <div id="projectsContainer">
 
@@ -43,10 +43,16 @@ const IndexPage = () => {
 
           <br /><br />
 
-          While still in the very early stages I think this has been one of my favorite ways to build a site
-          so far. With the help of ChatGPT I've been able to jumpstart this quite a bit, while learning how
-          it functions simultaneously. I think the part I find the most interesting is the intersection of
-          all the different languages used. HTML, Javascript, React, CSS, its all in one place!
+          This website has been one of my major passion projects for a while. I didn't take any web development courses
+          in college so I have learned all these technologies on my own time. I've found a real enjoyment in it and plan
+          to continually improve and update this site.
+
+          <br></br>
+
+          The projects showcased here are a combination of many different things but ultimately all point towards what I
+          enjoy doing: creating new venues and tools for artistic expression. I find both P.A.C.E and F-E-R-M are the main
+          showcases of this ideology. I use Ferm quite often myself as its simply fun to use! Which was one of the major reasons
+          I had worked so long on it and made so many different capabilites.
         </p>
 
 
