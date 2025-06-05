@@ -1,11 +1,51 @@
 // src/pages/index.js
 
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
-import Layout from "../components/layout"; // Corrected import path
-import { pageStyles, headingStyles, headingAccentStyles, linkStyle, paragraphStyles, footerStyles } from "../styles";
+import { ferm, word2vec, smg } from "../images";
+
+import Layout from "../components/layout";
+import { 
+  pageStyles, 
+  headingStyles, 
+  headingAccentStyles, 
+  linkStyle, 
+  paragraphStyles, 
+  footerStyles,
+  projectsShowcaseStyles,
+  projectCardStyles,
+  projectCardImageStyles,
+  projectCardOverlayStyles,
+  projectCardTitleStyles,
+  projectCardHoverStyles
+} from "../styles";
 
 const IndexPage = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  // Project data - easy to extend with new projects
+  const projects = [
+    {
+      id: "ferm",
+      title: "F-E-R-M",
+      link: "/projects/ferm",
+      // Placeholder image - replace with actual project images
+      image: ferm
+    },
+    {
+      id: "sonic-poetry", 
+      title: "Word2Vec Sonic Poetry",
+      link: "/projects/sonicPoetry",
+      image: word2vec
+    },
+    {
+      id: "smg",
+      title: "S-M-G", 
+      link: "/projects/smg",
+      image: smg
+    }
+  ];
+
   return (
     <Layout>
       <main style={pageStyles}>
@@ -14,28 +54,36 @@ const IndexPage = () => {
           <span style={headingAccentStyles}> This is my Portfolio! 🎉🎉</span>
         </h1>
 
-        {/* Carousel of Homepage Images */}
-
-          <h2>Check out some of my online projects below!</h2>
-        {/* Project Showcase */}
-        <div id="projectsContainer">
-
-          <div id="fermContainer">
-        <Link to="/projects/ferm" style={linkStyle}>F-E-R-M</Link>
-          </div>
-
-          <div id="sonicPoetryContainer">
-            <Link to="/projects/sonicPoetry" style={linkStyle}>Word2Vec Sonic Poetry</Link>
-          </div>
-
-          <div id="musicGeneratorContainer">
-            <Link to="/projects/smg" style={linkStyle}>S-M-G</Link>
-          </div>
-          
+        <h2>Check out some of my online projects below!</h2>
+        
+        {/* Project Showcase Grid */}
+        <div style={projectsShowcaseStyles}>
+          {projects.map((project) => (
+            <Link
+              key={project.id}
+              to={project.link}
+              style={{
+                ...projectCardStyles,
+                ...(hoveredCard === project.id ? projectCardHoverStyles : {})
+              }}
+              onMouseEnter={() => setHoveredCard(project.id)}
+              onMouseLeave={() => setHoveredCard(null)}
+            >
+              <img
+                src={project.image}
+                alt={`${project.title} project preview`}
+                style={projectCardImageStyles}
+              />
+              <div style={projectCardOverlayStyles}>
+                <h3 style={projectCardTitleStyles}>
+                  {project.title}
+                </h3>
+              </div>
+            </Link>
+          ))}
         </div>
 
-        {/* End Showcase */}
-        <br></br> <br></br>
+        <br /><br />
 
         <p style={paragraphStyles}>
           Here I have my projects showcased as my portfolio, and a blog page where I make posts ranging from
@@ -47,26 +95,23 @@ const IndexPage = () => {
           in college so I have learned all these technologies on my own time. I've found a real enjoyment in it and plan
           to continually improve and update this site.
 
-          <br></br>
+          <br /><br />
 
           The projects showcased here are a combination of many different things but ultimately all point towards what I
           enjoy doing: creating new venues and tools for artistic expression. I find both P.A.C.E and F-E-R-M are the main
           showcases of this ideology. I use Ferm quite often myself as its simply fun to use! Which was one of the major reasons
-          I had worked so long on it and made so many different capabilites.
+          I had worked so long on it and made so many different capabilities.
         </p>
 
-
-      <div style={footerStyles}>
-        <p>
-          404 pages, for debugging and style<br />
-          <Link to="/404" style={linkStyle}>Custom 404 Page</Link> <br />
-          <Link to="/fakepagelink" style={linkStyle}>404 Page</Link>
-          <br />
-          <br />
-        </p>
-      </div>
-        
-
+        <div style={footerStyles}>
+          <p>
+            404 pages, for debugging and style<br />
+            <Link to="/404" style={linkStyle}>Custom 404 Page</Link> <br />
+            <Link to="/fakepagelink" style={linkStyle}>404 Page</Link>
+            <br />
+            <br />
+          </p>
+        </div>
       </main>
     </Layout>
   );
@@ -74,4 +119,4 @@ const IndexPage = () => {
 
 export default IndexPage;
 
-export const Head = () => <title>Home Page</title>; 
+export const Head = () => <title>Home Page</title>;

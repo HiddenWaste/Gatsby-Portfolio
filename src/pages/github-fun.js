@@ -16,10 +16,14 @@ const GithubFun = () => {       // Initialize the object that is the page ( a co
                         </p>
 
                         <h3 style={headingAccentStyles}> Games </h3>
-                        <h3 style={headingAccentStyles}> Applications </h3>
+                        <h3 style={headingAccentStyles}> Applications \ Tools </h3>
+                            <a href="https://github.com/lucasnevespereira/resumme-builder">Resumme Builder</a>
                         <h3 style={headingAccentStyles}> Visualizations </h3>
                         <h3 style={headingAccentStyles}> Libraries \ Collections </h3>
-                        
+                        <h3 style={headingAccentStyles}> Users To Follow </h3>
+                        <div>
+                            <a href="https://github.com/pelinski">Teresa Pelinski</a>
+                        </div>
                 </main>
         </Layout>
     )                   

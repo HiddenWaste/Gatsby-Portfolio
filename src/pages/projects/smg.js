@@ -25,10 +25,7 @@ const SMGPage = () => {
                                 borderRadius: "8px"
                             }}
                         />
-                        <figcaption>
-                            <a href="https://s-m-g.netlify.app/">Webpage</a>    
-                            <a href="https://github.com/HiddenWaste/S-M-G">GitHub Repo</a>
-                        </figcaption>
+                        <figcaption><a href="https://s-m-g.netlify.app/">Webpage</a>    <a href="https://github.com/HiddenWaste/S-M-G">GitHub Repo</a></figcaption>
                     </figure>
                 </div>
                 <br />
