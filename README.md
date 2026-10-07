@@ -8,3 +8,8 @@ Currently Working On:
   - Look and feel of overall site
   - Daily Markdown Note Generation
   - Learning Tone.js and Web Audio API
+
+# Clone Command
+```
+git clone https://github.com/HiddenWaste/gatsby-portfolio
+```
