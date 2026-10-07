@@ -2,25 +2,42 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
-const path = require('path'); // Used to get the path for markdown blog posts
+const fs = require('fs');
+const path = require('path');
+
+// Determine content directory:
+// 1. CONTENT_DIR environment variable (e.g. Syncthing live folder)
+// 2. content/live in project root
+// 3. Fallback to src/blogs for backward compatibility
+let contentPath = path.resolve(__dirname, 'content/live');
+if (process.env.CONTENT_DIR && fs.existsSync(process.env.CONTENT_DIR)) {
+  contentPath = path.resolve(process.env.CONTENT_DIR);
+} else if (!fs.existsSync(contentPath) && fs.existsSync(path.resolve(__dirname, 'src/blogs'))) {
+  contentPath = path.resolve(__dirname, 'src/blogs');
+}
 
 module.exports = {
-  // An export specifically for blog markdown files
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `blogs`,
-        path: `${__dirname}/src/blogs/`,     // Path for blog markdowns
+        name: `content`,
+        path: contentPath,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images/`,    // Path for images
+        path: `${__dirname}/src/images/`,
       },
     },
-    `gatsby-transformer-remark`,            // Markdown Plugin Used
+    `gatsby-plugin-postcss`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [],
+      },
+    },
   ],
 };

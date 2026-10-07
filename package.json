@@ -16,16 +16,22 @@
   },
   "dependencies": {
     "gatsby": "^5.13.7",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-remark-audio": "^1.0.2",
     "gatsby-remark-embedder": "^7.0.0",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-remark": "^6.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "styled-components": "^6.1.12",
-    "tone": "^15.0.4",
-    "gatsby-plugin-image": "^3.13.1",
-    "gatsby-plugin-sharp": "^5.13.1",
-    "gatsby-transformer-sharp": "^5.13.1"
+    "tone": "^15.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.6.1",
+    "gatsby-plugin-postcss": "^6.16.0",
+    "postcss": "^8.5.29",
+    "tailwindcss": "^3.4.19"
   }
 }
